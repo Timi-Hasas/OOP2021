@@ -107,6 +107,12 @@ namespace RationalNumber
             return result;
         }
 
+        public static Rational operator +(int second, Rational first)
+        {
+            Rational newAdd = new Rational(second * first.numitor, first.numitor);
+            Rational result = newAdd.Add(first);
+            return result;
+        }
         public Rational Substract(Rational toSub)
         {
             Rational result;
@@ -129,6 +135,13 @@ namespace RationalNumber
             Rational newSub = new Rational(second * first.numitor, first.numitor);
             Rational result = newSub.Substract(first);
             result.numarator *= -1;
+            return result;
+        }
+
+        public static Rational operator -(int second, Rational first)
+        {
+            Rational newSub = new Rational(second * first.numitor, first.numitor);
+            Rational result = newSub.Substract(first);
             return result;
         }
 
@@ -166,6 +179,13 @@ namespace RationalNumber
             Rational result = new Rational(first.numarator * second, first.numitor);
             return result;
         }
+
+        public static Rational operator *(int second, Rational first)
+        {
+            Rational result = new Rational(first.numarator * second, first.numitor);
+            return result;
+        }
+
         public Rational Divide(Rational toDiv)
         {
             Rational result = new Rational(numarator * toDiv.numitor, numitor * toDiv.numarator);
@@ -186,6 +206,12 @@ namespace RationalNumber
         public static Rational operator / (Rational first, int second)
         {
             Rational result = new Rational(first.numarator, first.numitor * second);
+            return result;
+        }
+
+        public static Rational operator /(int second, Rational first)
+        {
+            Rational result = new Rational(first.numitor * second, first.numarator);
             return result;
         }
 
