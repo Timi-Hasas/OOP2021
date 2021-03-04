@@ -10,9 +10,9 @@ namespace RationalNumber
     {
         static void Main(string[] args)
         {
-            Rational q1 = new Rational(1, 2);
+            Rational q1 = new Rational(1, -2);
             Console.WriteLine(q1);
-            Rational q2 = new Rational(4, 5);
+            Rational q2 = new Rational(-4, 5);
             Console.WriteLine(q2);
             Rational q3 = new Rational(10, 5);
             Console.WriteLine(q3);

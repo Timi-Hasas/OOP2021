@@ -37,7 +37,7 @@ namespace RationalNumber
             if (numitor == 0)
                 numitor = 1;
 
-            if (numarator < 0)
+            if (numitor < 0)
             {
                 numarator *= -1;
                 numitor *= -1;
