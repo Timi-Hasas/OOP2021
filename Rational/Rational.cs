@@ -18,6 +18,7 @@ namespace RationalNumber
                 numarator /= cmmdc;
                 numitor /= cmmdc;
             }
+
         }
 
         private int Cmmdc(int first, int second)
