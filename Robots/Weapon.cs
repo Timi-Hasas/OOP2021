@@ -30,12 +30,13 @@ namespace Robots
                 target.Health = target.InitialHealth;
             }
         }
+        abstract public void Sound();
     }
     class Laser : Weapon
     {
         public Laser(int power, int cooldown, int range)
         : base(power, cooldown, range) { }
-        public void Sound()
+        public override void Sound()
         {
             Console.WriteLine("Laser activated!");
         }
@@ -44,7 +45,7 @@ namespace Robots
     {
         public Chainsaw(int power, int cooldown, int range)
         : base(power, cooldown, range) { }
-        public void Sound()
+        public override void Sound()
         {
             Console.WriteLine("brum-brum-bruumm!");
         }
@@ -54,7 +55,7 @@ namespace Robots
         public Sword(int power, int cooldown, int range)
         : base(power, cooldown, range)
         { }
-        public void Sound()
+        public override void Sound()
         {
             Console.WriteLine("Slash!");
         }
@@ -63,7 +64,7 @@ namespace Robots
     {
         public RocketLauncher(int power, int cooldown, int range)
         : base(power, cooldown, range) { }
-        public void Special()
+        public override void Sound()
         {
             Console.WriteLine("BOOM!");
         }

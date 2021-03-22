@@ -50,6 +50,7 @@ namespace Robots
             Attack = 5;
             Defense = 0;
             Speed = 20;
+            InitialHealth = Health;
         }
     }
     class Human : Being
