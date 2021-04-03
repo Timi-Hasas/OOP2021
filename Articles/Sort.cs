@@ -8,13 +8,10 @@ namespace Articles
 {
     static class Sort
     {
-        private static int PublicationSortHelper(Article firstArticle, Article secondArticle)
+        public static void ByPublication(Article[] articles)
         {
-            return firstArticle.Publication.CompareTo(secondArticle.Publication);
-        }
-        public static void ByPublication(Article[] article)
-        {
-            Array.Sort(article, PublicationSortHelper);
+            //Array.Sort(article, PublicationSortHelper);
+            Array.Sort(articles, (x, y) => x.Publication.CompareTo(y.Publication));
         }
         private static int LikesSortHelper(Article firstArticle, Article secondArticle)
         {
@@ -25,9 +22,11 @@ namespace Articles
             else
                 return 0;
         }
-        public static void ByLikes(Article[] article)
+        public static void ByLikes(Article[] articles)
         {
-            Array.Sort(article, LikesSortHelper);
+            //Array.Sort(article, LikesSortHelper);
+            Array.Sort(articles, (x, y) => x.Likes - y.Likes);
+
         }
         private static int DislikesSortHelper(Article firstArticle, Article secondArticle)
         {
@@ -40,7 +39,7 @@ namespace Articles
         }
         public static void ByDislikes(Article[] article)
         {
-            Array.Sort(article, DislikesSortHelper);
+            Array.Sort(article, (x,y) => x.Dislikes - y.Dislikes);
         }
 
         private static int RatioSortHelper(Article firstArticle, Article secondArticle)

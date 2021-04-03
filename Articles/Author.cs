@@ -14,9 +14,21 @@ namespace Articles
             LastName = lastName;
             BirthDay = birthDay;
         }
+        public Author()
+        {
+
+        }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirthDay { get; set; }
+
+        public string FullName
+        {
+            get
+            {
+                return (FirstName + " " + LastName).Trim();
+            }
+        }
         public int Age
         {
             get

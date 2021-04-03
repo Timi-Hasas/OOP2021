@@ -9,20 +9,20 @@ namespace Articles
 {
     class Article
     {
-        public Article(string title, Author[] author, DateTime publication, DateTime lastUpdate, int likes, int dislikes)
+        public Article(string title, Author[] author, DateTime publication)
         {
             Title = title;
             Author = author;
             Publication = publication;
-            LastUpdate = lastUpdate;
-            Likes = likes;
-            Dislikes = dislikes;
+            LastUpdate = publication;
+            Likes = 0;
+            Dislikes = 0;
 
             foreach (Author aut in Author)
                 aut.TotalArticles++;
         }
         public string Title { get; set; }
-        public DateTime Publication { get; set; }
+        public DateTime Publication { get; private set; }
         public DateTime LastUpdate { get; set; }
         public int Likes { get; set; }
         public int Dislikes { get; set; }
@@ -33,7 +33,7 @@ namespace Articles
             {
                 string toReturn = "";
                 foreach (Author person in Author)
-                    toReturn += $"{person.FirstName} {person.LastName}; ";
+                    toReturn += $"{person.FullName}; ";
                 return toReturn;
             }
         }

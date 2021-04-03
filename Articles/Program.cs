@@ -10,13 +10,14 @@ namespace Articles
     {
         static void Main(string[] args)
         {
-            Author Bob = new Author("Ion", "Ionescu", new DateTime(1977, 6, 10));
-            Author Bobby = new Author("Mihai", "Eminescu", new DateTime(1977, 6, 10));
-            Author[] authors = { Bob, Bobby };
-            Author[] auts = { Bob };
-            Article art1 = new Article("How to learn OOP", authors, new DateTime(2000, 6, 9), new DateTime(2001, 5, 9), 100, 2 );
-            Article art2 = new Article("How to learn POO", authors, new DateTime(2001, 5, 9), new DateTime(2001, 5, 9), 102, 2);
-            Article art3 = new Article("How to learn OOP", auts , new DateTime(2000, 7, 9), new DateTime(2001, 5, 9), 99, 2);
+            Author a1 = new Author("Ion", "Ionescu", new DateTime(1977, 6, 10));
+            Author a2 = new Author("Mihai", "Eminescu", new DateTime(1977, 6, 10));
+            Author a3 = new Author { FirstName = "Vasile", LastName = "Popescu", BirthDay = new DateTime(1950, 2, 3) };
+            Author[] authors = { a1, a2 };
+            Author[] auts = { a1 };
+            Article art1 = new Article("How to learn OOP", authors, new DateTime(2000, 6, 9));
+            Article art2 = new Article("How to learn POO", authors, new DateTime(2001, 5, 9));
+            Article art3 = new Article("How to learn OOP", auts , new DateTime(2000, 7, 9));
 
             Article[] arts = { art1, art2, art3 };
             //arts = Filter.ByAuthor(arts, Bobby);
